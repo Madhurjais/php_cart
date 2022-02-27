@@ -43,7 +43,7 @@ function checkIfProductExists($id){
 function display_cart(){
 	$cart = isset($_SESSION['cart'])?$_SESSION['cart']:array();
     $total = 0 ;
-    $tab = "<table><button class = 'clear_cart' name = 'clearcart'>X</button>
+    $tab = "<table><form method = 'POST'><button class = 'clear_cart' name = 'clearcart'>X</button></form>
     <tr><th>ID</th><th>NAME</th>
     <th>PRICE</th><th>QUANTITY</th><th>QUANTITY update</th></tr>";
     foreach($cart as $key => $val){
@@ -62,7 +62,7 @@ function display_cart(){
         $total += (int)$val['price']*(int)$val["quantity"] ;
         // echo $val['price'];
     } 
-     $tab .= "<tr><td colspan = '4'>total price : ".$total."</td></tr></table>";
+     $tab .= "<tr><td colspan = '6'>total price : ".$total."</td></tr></table>";
      return $tab ;
 }
 if(isset($_POST['action'])){

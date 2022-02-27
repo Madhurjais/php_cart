@@ -158,3 +158,8 @@ form{
 	float : left ;
 	padding: 30px;
 }
+.clear_cart{
+	margin-left : 50px ;
+	padding: 10px;
+	background-color: red;
+}
